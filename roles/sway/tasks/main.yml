@@ -45,4 +45,4 @@
   copy:
     src: "kanshi/by_host/{{ ansible_hostname }}/config"
     dest: ~/.config/kanshi/
-  ignore_errors: yes
+  failed_when: false
