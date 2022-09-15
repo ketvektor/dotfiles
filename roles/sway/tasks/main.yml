@@ -11,9 +11,9 @@
     dest: ~/.config/sway/config
 
 - name: autostart sway
-  copy:
-    src: sway.fish
-    dest: ~/.config/fish/conf.d/
+  template:
+    src: sway.fish.j2
+    dest: ~/.config/fish/conf.d/sway.fish
 
 - name: create swaylock dir config
   file:

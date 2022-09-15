@@ -201,7 +201,11 @@ exec_always bash -c "pgrep -x mako || mako"
 #exec_always bash -c "pgrep -x wlsunset || wlsunset -l 43.6 -L 3.9"
 
 # xdg-desktop-portal-wlr
+{% if ansible_service_mgr == "systemd" %}
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+{% else %}
 exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+{% endif %}
 
 # exec foreground apps
 
