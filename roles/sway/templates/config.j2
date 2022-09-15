@@ -208,7 +208,7 @@ exec_always bash -c "pgrep -x mako || mako"
 
 # xdg-desktop-portal-wlr
 {% if ansible_service_mgr == "systemd" %}
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XAUTHORITY
 {% else %}
 exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 {% endif %}
