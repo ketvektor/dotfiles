@@ -193,8 +193,14 @@ bindsym $mod+Next move workspace to output right
 
 # exec background apps
 
-# tiny
-exec_always bash -c "pgrep -x tiny || screen -S tiny -md tiny"
+# irc client
+{% if ansible_distribution == "Archlinux" %}
+{% set senpai_bin = "senpai-irc" %}
+{% else %}
+{% set senpai_bin = "senpai" %}
+{% endif %}
+
+exec_always bash -c "pgrep -x {{ senpai_bin }} || screen -S irc -md {{ senpai_bin }}"
 # mako
 exec_always bash -c "pgrep -x mako || mako"
 # wlsunset
@@ -211,8 +217,8 @@ exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # variery
 exec variety &
-# tiny
-exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R tiny"'
+# irc client
+exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R irc"'
 # waybar exec
 exec_always ~/.config/waybar/waybar.sh &
 # wob exec
