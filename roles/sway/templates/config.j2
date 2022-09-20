@@ -200,7 +200,6 @@ bindsym $mod+Next move workspace to output right
 {% set senpai_bin = "senpai" %}
 {% endif %}
 
-exec_always bash -c "pgrep -x {{ senpai_bin }} || screen -S irc -md {{ senpai_bin }}"
 # mako
 exec_always bash -c "pgrep -x mako || mako"
 # wlsunset
@@ -218,7 +217,7 @@ exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 # variery
 exec variety &
 # irc client
-exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R irc"'
+exec swaymsg 'workspace $tag4; exec kitty bash -c "senpai"'
 # waybar exec
 exec_always ~/.config/waybar/waybar.sh &
 # wob exec
