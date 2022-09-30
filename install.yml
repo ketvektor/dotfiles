@@ -16,6 +16,8 @@
       tags: neovim
     - role: screen
       tags: screen
+    - role: tmux
+      tags: tmux
     - role: git
       tags: git,cli
     - role: ssh
