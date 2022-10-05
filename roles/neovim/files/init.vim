@@ -40,3 +40,6 @@ set guicursor=
 
 " Enable copy to system clipboard
 set clipboard+=unnamedplus
+
+" Disable mouse
+set mouse=
