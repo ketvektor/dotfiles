@@ -15,7 +15,7 @@
     dest: ~/.config/wofi/
 
 - name: copy wofi powermenu
-  copy:
-    src: powermenu.sh
-    dest: ~/.config/wofi/
+  template:
+    src: powermenu.sh.j2
+    dest: ~/.config/wofi/powermenu.sh
     mode: 0755
