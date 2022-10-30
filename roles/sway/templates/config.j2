@@ -32,6 +32,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+d exec --no-startup-id wofi --show run -p "shell:" -L10
 bindsym $mod+d exec --no-startup-id wofi --show drun -p "app:" -L 10
 bindsym $mod+s exec --no-startup-id gopass ls --flat | wofi --dmenu -p "password:" -L 10 | xargs --no-run-if-empty gopass show -c
+bindsym $mod+Shift+s exec --no-startup-id gopass ls --flat web | wofi --dmenu -p "password:" -L 10 | xargs --no-run-if-empty gopass totp -c
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -44,7 +45,7 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+m focus right
- 
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
