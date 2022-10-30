@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-action=$(echo -e "suspend\nlock\nlogout\nshutdown\nreboot" | wofi -d -p "power:" -L 5)
+action=$(echo -e "suspend\nlock\nlogout\nshutdown\nreboot" | wofi -d -p "power:" -L 7)
 
 if [[ "$action" == "lock" ]]
 then
