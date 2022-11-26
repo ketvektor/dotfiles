@@ -1,11 +1,7 @@
 #INCLUDE####################################################
 # output configuration
-set $left "HDMI-A-2"
-set $center "HDMI-A-1"
-set $right "HDMI-A-3"
-output $left pos 0 0 res 1920x1200
-output $center pos 1920 0 res 1920x1080
-output $right pos 3840 0 res 1920x1200
+set $main "eDP1"
+output $main pos 0 0 res 1920x1200
 
 # dpms
 output * dpms on
@@ -15,17 +11,17 @@ bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
 # assign workspace to screens
-workspace $tag1 output $left
-workspace $tag2 output $center
-workspace $tag3 output $right
-workspace $tag4 output $right
-workspace $tag5 output $right
-workspace $tag6 output $right
-workspace $tag7 output $center
-workspace $tag8 output $center
-workspace $tag9 output $center
-workspace $tag10 output $right
+workspace $tag1 output $main
+workspace $tag2 output $main
+workspace $tag3 output $main
+workspace $tag4 output $main
+workspace $tag5 output $main
+workspace $tag6 output $main
+workspace $tag7 output $main
+workspace $tag8 output $main
+workspace $tag9 output $main
+workspace $tag10 output $main
 
 # syncthing
-exec_always bash -c "pgrep -x syncthing || syncthing"
+#exec_always bash -c "pgrep -x syncthing || syncthing"
 #INCLUDE####################################################

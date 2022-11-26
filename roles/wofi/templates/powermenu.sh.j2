@@ -12,7 +12,7 @@ then
 {% if ansible_distribution_release == "void" %}
     sudo zzz
 {% else %}
-    swaylock-fancy && systemctl suspend && echo '*/reconnect' >~/.weechat/weechat_fifo
+    swaylock-fancy && systemctl suspend # && echo '*/reconnect' >~/.weechat/weechat_fifo
 {% endif %}
 fi
 
